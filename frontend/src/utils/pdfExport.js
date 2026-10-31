@@ -9,7 +9,7 @@ export async function exportElementToPdf(element, filename = "Auto_Sage_Diagnost
     const html2pdf = html2pdfModule.default || html2pdfModule;
 
     const opt = {
-      margin: [10, 10, 12, 10],
+      margin: [12, 12, 14, 12],
       filename,
       image: { type: "jpeg", quality: 0.98 },
       html2canvas: {
@@ -17,9 +17,14 @@ export async function exportElementToPdf(element, filename = "Auto_Sage_Diagnost
         useCORS: true,
         letterRendering: true,
         logging: false,
+        backgroundColor: "#ffffff",
       },
       jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-      pagebreak: { mode: ["css", "legacy"] },
+      pagebreak: {
+        mode: ["css", "legacy"],
+        before: ".report-page-break",
+        avoid: [".report-avoid-break", "tr", "table", ".report-card-section"],
+      },
     };
 
     await html2pdf().set(opt).from(element).save();

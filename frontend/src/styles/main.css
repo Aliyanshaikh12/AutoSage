@@ -597,9 +597,21 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+  .report-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+  .report-avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
 }
 
 @media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm 12mm 10mm;
+  }
   aside,
   header,
   .no-print,
@@ -615,5 +627,14 @@
   }
   body {
     background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .report-document {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
   }
 }
