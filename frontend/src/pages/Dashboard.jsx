@@ -79,13 +79,13 @@ export default function Dashboard({
 
             <div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tight leading-tight">
-                Your Car. <span className="text-primary">Our Diagnosis.</span>
+                Auto <span className="text-primary">Sage</span>
               </h1>
               <p className="text-lg sm:text-xl font-medium text-on-surface-variant mt-2">
-                Find the problem. Know what to do next.
+                Detect the Fault. Discover the Fix.
               </p>
               <p className="text-sm sm:text-base text-on-surface-variant/90 mt-3 max-w-xl leading-relaxed">
-                Identify possible car problems through symptoms and get helpful inspection and repair guidance before heading to the shop.
+                AI-powered car fault diagnosis that helps identify possible problems through symptoms and provides helpful inspection and repair guidance.
               </p>
             </div>
 
