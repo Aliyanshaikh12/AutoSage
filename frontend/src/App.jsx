@@ -40,6 +40,7 @@ export default function App() {
   const [faultDetailMatch, setFaultDetailMatch] = useState(null);
   const [toast, setToast] = useState(null);
   const [historyCount, setHistoryCount] = useState(() => readHistoryRecords().records.length);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const startNewDiagnosis = useCallback((nextCategoryId = null) => {
     setCategoryId(typeof nextCategoryId === "string" ? nextCategoryId : null);
@@ -163,6 +164,10 @@ export default function App() {
       historyCount={historyCount}
       toast={toast}
       onToast={setToast}
+      onSearch={(q) => {
+        setSearchQuery(q);
+        setPage(PAGES.SYMPTOMS);
+      }}
     >
       {page === PAGES.DASHBOARD && (
         <Dashboard
@@ -202,6 +207,8 @@ export default function App() {
           onProceedToQuestions={handleProceedToQuestions}
           onDiagnosisComplete={handleDiagnosisComplete}
           onBack={() => setPage(PAGES.DASHBOARD)}
+          initialSearchQuery={searchQuery}
+          onSearchClear={() => setSearchQuery("")}
         />
       )}
 

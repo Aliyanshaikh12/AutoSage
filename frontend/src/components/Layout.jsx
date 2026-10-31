@@ -92,6 +92,9 @@ export default function Layout({
                       {historyCount > 9 ? "9+" : historyCount}
                     </span>
                   )}
+                  <span className="absolute left-full ml-3 px-2.5 py-1 rounded-md bg-inverse-surface text-inverse-on-surface text-[11px] font-medium whitespace-nowrap shadow-xl opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity z-50">
+                    {item.title}
+                  </span>
                 </a>
               );
             })}
@@ -185,14 +188,14 @@ export default function Layout({
       </nav>
 
       {localToast && (
-        <div className="fixed bottom-5 right-5 z-[80] max-w-sm rounded-xl bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm shadow-xl flex items-start gap-space-sm no-print">
-          <span className="material-symbols-outlined text-primary-fixed text-[20px]">
+        <div className="fixed bottom-5 right-5 z-[80] max-w-sm rounded-xl bg-inverse-surface text-inverse-on-surface px-4 py-3 shadow-2xl flex items-start gap-3 no-print animate-slide-up border border-white/10">
+          <span className="material-symbols-outlined text-primary-fixed text-[20px] mt-0.5 shrink-0">
             info
           </span>
-          <span className="font-body-sm text-body-sm leading-relaxed">{localToast}</span>
+          <span className="text-xs leading-relaxed flex-1">{localToast}</span>
           <button
             type="button"
-            className="text-inverse-on-surface/70 hover:text-inverse-on-surface"
+            className="text-inverse-on-surface/70 hover:text-inverse-on-surface p-0.5 rounded transition-colors"
             onClick={() => setLocalToast(null)}
             aria-label="Dismiss message"
           >

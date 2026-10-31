@@ -127,8 +127,7 @@ export default function VehicleInformation({ initialVehicle, onComplete, onSkip,
             Vehicle Information
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl">
-            Vehicle details label this local session and its report. The KBS evaluates
-            observable symptoms against diagnostic rules across automotive systems.
+            Enter your vehicle details to personalize your diagnostic report and maintenance recommendations, or skip to start diagnosing right away.
           </p>
         </div>
         <div className="flex items-center gap-space-sm">
@@ -253,12 +252,11 @@ export default function VehicleInformation({ initialVehicle, onComplete, onSkip,
             </Field>
           </div>
 
-          <div className="rounded-xl bg-surface-container-low p-space-md flex items-start gap-space-sm">
-            <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+          <div className="rounded-xl bg-surface-container-low p-space-md flex items-start gap-space-sm border border-surface-container">
+            <span className="material-symbols-outlined text-primary text-[20px] mt-0.5">verified_user</span>
             <div className="font-body-sm text-body-sm text-on-surface-variant">
-              <span className="font-headline-sm text-on-surface">No vehicle bus connection.</span>{" "}
-              Auto Sage does not read OBD-II, CAN, VIN, or live sensor data. Specs
-              are stored locally for session labelling and reports only.
+              <span className="font-semibold text-on-surface">Private &amp; Secure.</span>{" "}
+              Vehicle information is stored locally in your browser and used exclusively to generate your personalized diagnostic report. No external telemetry or tracking is performed.
             </div>
           </div>
 
@@ -327,12 +325,12 @@ export default function VehicleInformation({ initialVehicle, onComplete, onSkip,
                 Stored in this browser only.
               </div>
               <div className="flex items-start gap-1.5">
-                <span className="material-symbols-outlined text-primary text-[16px]">science</span>
-                Used as a report label, not as a matching rule.
+                <span className="material-symbols-outlined text-primary text-[16px]">description</span>
+                Included in your official diagnostic report.
               </div>
               <div className="flex items-start gap-1.5">
                 <span className="material-symbols-outlined text-primary text-[16px]">fact_check</span>
-                Dataset labels remain the only evidence source.
+                Personalizes service &amp; maintenance directives.
               </div>
             </div>
           </section>

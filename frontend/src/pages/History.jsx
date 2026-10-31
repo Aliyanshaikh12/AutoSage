@@ -83,15 +83,14 @@ export default function History({
   }, [history]);
 
   return (
-    <div className="w-full px-space-md md:px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1400px] mx-auto pb-24">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6 max-w-[1300px] mx-auto pb-28 animate-fade-in">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight uppercase">
-            Diagnosis History &amp; Audit Log
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-on-surface tracking-tight uppercase">
+            Diagnosis History
           </h1>
-          <p className="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
-            Past diagnostic evaluations stored locally in your browser (localStorage). You can reopen
-            any past diagnosis session or export its technical dossier to PDF.
+          <p className="text-xs sm:text-sm text-on-surface-variant max-w-2xl mt-1">
+            Past vehicle diagnoses saved in your browser. Reopen previous results or export a printable report anytime.
           </p>
         </div>
         <div className="flex flex-wrap gap-space-sm">

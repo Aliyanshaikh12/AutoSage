@@ -84,7 +84,7 @@ export default function FollowUpQuestions({
   const answeredCount = Object.values(answers).filter((v) => v !== null && v !== undefined).length;
 
   return (
-    <div className="space-y-space-md">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6 max-w-[1200px] mx-auto pb-28 animate-fade-in">
       <Stepper currentStep={3} onStepClick={onNavigateStep} />
 
       {/* Header card */}

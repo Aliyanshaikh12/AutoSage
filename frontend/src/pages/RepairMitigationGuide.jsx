@@ -51,13 +51,13 @@ export default function RepairMitigationGuide({
   };
 
   return (
-    <div className="w-full px-space-md md:px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1300px] mx-auto pb-24">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6 max-w-[1300px] mx-auto pb-28 animate-fade-in">
       {/* Top Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-container-lowest rounded-xl p-space-sm shadow-sm border border-surface-container no-print">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-surface-container-lowest rounded-2xl p-4 shadow-sm border border-surface-container no-print">
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-xs transition-colors self-start sm:self-auto"
+          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs font-semibold transition-colors self-start sm:self-auto btn-press-fx"
         >
           <span className="material-symbols-outlined text-[16px]">arrow_back</span>
           <span>Back to Diagnosis</span>
@@ -70,30 +70,32 @@ export default function RepairMitigationGuide({
       </div>
 
       {statusMessage && (
-        <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 text-xs text-primary font-medium flex items-center gap-2">
+        <div className="p-3.5 rounded-xl bg-primary/10 border border-primary/20 text-xs text-primary font-medium flex items-center gap-2 animate-fade-in">
           <span className="material-symbols-outlined text-[18px]">info</span>
           <span>{statusMessage}</span>
         </div>
       )}
 
       {/* Section 1: Fault Overview */}
-      <section className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md md:p-space-lg border border-surface-container space-y-3">
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-surface-container pb-2">
+      <section className="bg-surface-container-lowest rounded-2xl shadow-sm p-5 sm:p-6 border border-surface-container space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-surface-container pb-3">
           <div>
-            <span className="font-label-caps text-[10px] text-primary uppercase font-bold tracking-wider block">
+            <span className="text-[10px] text-primary uppercase font-bold tracking-wider block">
               1. Fault Candidate Overview
             </span>
-            <h1 className="font-headline-lg text-xl md:text-2xl font-extrabold text-on-surface tracking-tight mt-0.5">
+            <h1 className="text-xl sm:text-2xl font-extrabold text-on-surface tracking-tight mt-0.5">
               {activeMatch.possible_fault || activeMatch.title}
             </h1>
           </div>
-          <span className="font-mono text-xs text-on-surface-variant bg-surface-container px-2.5 py-1 rounded">
-            {activeMatch.rule_id}
-          </span>
+          {activeMatch.rule_id && (
+            <span className="font-mono text-xs text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-md">
+              Ref: {activeMatch.rule_id.replace(/^RULE_/, "")}
+            </span>
+          )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-1">
-          <div className="p-3 rounded-lg bg-surface-container-low border border-surface-container">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+          <div className="p-3.5 rounded-xl bg-surface-container-low border border-surface-container">
             <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider block mb-0.5">
               Target Component &amp; Subsystem
             </span>
@@ -105,7 +107,7 @@ export default function RepairMitigationGuide({
             </span>
           </div>
 
-          <div className="p-3 rounded-lg bg-surface-container-low border border-surface-container">
+          <div className="p-3.5 rounded-xl bg-surface-container-low border border-surface-container">
             <span className="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider block mb-0.5">
               Diagnostic Explanation
             </span>
@@ -117,13 +119,13 @@ export default function RepairMitigationGuide({
       </section>
 
       {/* Section 2: Possible Causes */}
-      <section className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md md:p-space-lg border border-surface-container space-y-2">
-        <h2 className="font-label-caps text-xs text-primary uppercase font-bold tracking-wider flex items-center gap-1.5">
+      <section className="bg-surface-container-lowest rounded-2xl shadow-sm p-5 sm:p-6 border border-surface-container space-y-3">
+        <h2 className="text-xs text-primary uppercase font-bold tracking-wider flex items-center gap-1.5">
           <span className="material-symbols-outlined text-[16px]">psychology</span>
-          <span>2. Supported Root Causes (Knowledge Base Corpus)</span>
+          <span>2. Potential Root Causes</span>
         </h2>
         <p className="text-xs text-on-surface-variant">
-          Mechanical failure modes and environmental triggers documented in the research knowledge base:
+          Common mechanical failure modes and environmental triggers associated with this issue:
         </p>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 pt-1 text-xs text-on-surface">

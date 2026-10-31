@@ -13,6 +13,8 @@ export default function SymptomSelection({
   onProceedToQuestions,
   onDiagnosisComplete,
   onBack,
+  initialSearchQuery = "",
+  onSearchClear,
 }) {
   const [categories, setCategories] = useState([]);
   const [symptoms, setSymptoms] = useState([]);
@@ -21,10 +23,14 @@ export default function SymptomSelection({
   const [loadError, setLoadError] = useState("");
   const [submitError, setSubmitError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState(initialSearchQuery || "");
   const [reloadKey, setReloadKey] = useState(0);
   const [showReview, setShowReview] = useState(false);
   const inFlight = useRef(false);
+
+  useEffect(() => {
+    if (initialSearchQuery) setFilter(initialSearchQuery);
+  }, [initialSearchQuery]);
 
   useEffect(() => {
     let active = true;

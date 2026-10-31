@@ -23,10 +23,10 @@ export default function FaultDetails({ match, onBackToResults, onViewRepairGuide
   ];
 
   return (
-    <div className="w-full px-space-md md:px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1300px] mx-auto pb-24">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6 max-w-[1300px] mx-auto pb-28 animate-fade-in">
       {/* Top Header Card */}
-      <section className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md md:p-space-lg border border-surface-container space-y-2">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs border-b border-surface-container">
+      <section className="bg-surface-container-lowest rounded-2xl shadow-sm p-4 sm:p-6 border border-surface-container space-y-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-surface-container">
           <button
             type="button"
             onClick={onBackToResults}
@@ -43,11 +43,15 @@ export default function FaultDetails({ match, onBackToResults, onViewRepairGuide
         </div>
 
         <div>
-          <span className="font-mono text-[11px] text-outline font-medium">{match.rule_id}</span>
-          <h1 className="font-headline-lg text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight mt-0.5">
+          {match.rule_id && (
+            <span className="font-mono text-[11px] text-on-surface-variant font-medium bg-surface-container px-2 py-0.5 rounded">
+              Ref: {match.rule_id.replace(/^RULE_/, "")}
+            </span>
+          )}
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-on-surface tracking-tight mt-1">
             {match.possible_fault || match.title}
           </h1>
-          <p className="text-xs text-on-surface-variant mt-1">
+          <p className="text-xs sm:text-sm text-on-surface-variant mt-1">
             Subsystem: <strong>{match.subsystem || match.category_name}</strong> &bull; Target Component:{" "}
             <strong>{match.affected_component || "Subsystem Assembly"}</strong>
           </p>

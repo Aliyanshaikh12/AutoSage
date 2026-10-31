@@ -36,7 +36,7 @@ export default function DiagnosisResults({
   const comparison = Array.isArray(results?.candidates_comparison) ? results.candidates_comparison : [];
 
   return (
-    <div className="w-full px-space-md md:px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1500px] mx-auto pb-24">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6 max-w-[1450px] mx-auto pb-32 animate-fade-in">
       <Stepper
         currentStep={4}
         onStepClick={(page) => {
@@ -455,14 +455,14 @@ function Btn({ icon, children, onClick, primary }) {
     <button
       type="button"
       onClick={onClick}
-      className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg font-headline-sm text-[12px] transition-all cursor-pointer ${
+      className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer btn-press-fx ${
         primary
-          ? "bg-primary-container text-on-primary hover:bg-primary shadow-sm"
-          : "bg-surface-container text-on-surface hover:bg-surface-container-high"
+          ? "bg-primary text-on-primary hover:bg-primary-container shadow-sm hover:shadow"
+          : "bg-surface-container text-on-surface hover:bg-surface-container-high border border-surface-container-highest"
       }`}
     >
       <span className="material-symbols-outlined text-[17px]">{icon}</span>
-      {children}
+      <span>{children}</span>
     </button>
   );
 }

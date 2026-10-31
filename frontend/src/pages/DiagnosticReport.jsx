@@ -52,7 +52,7 @@ export default function DiagnosticReport({
   };
 
   return (
-    <div className="w-full px-space-md md:px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1100px] mx-auto pb-24">
+    <div className="w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col gap-6 max-w-[1100px] mx-auto pb-28 animate-fade-in">
       <Stepper currentStep={5} onStepClick={(page) => page === "results" && onBackToResults?.()} />
 
       {/* Top Action Bar */}
