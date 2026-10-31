@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from "react";
+import autoSageLogo from "../assets/auto-sage-brand-logo.png";
 import Stepper from "../components/Stepper.jsx";
 import { formatDateTime, vehicleLabel, vehicleSecondary } from "../stitch/dom.js";
 import { createReportId } from "../utils/historyStorage.js";
@@ -82,6 +83,14 @@ export default function DiagnosticReport({
             </button>
             <div className="h-4 w-px bg-surface-container-highest hidden sm:block" />
             <div className="flex items-center gap-2">
+              <img
+                src={autoSageLogo}
+                alt="Auto Sage"
+                className="h-5 sm:h-6 w-auto object-contain hidden sm:block select-none"
+                onError={(e) => {
+                  e.currentTarget.src = "/images/auto-sage-brand-logo.png";
+                }}
+              />
               <span className="text-xs font-bold text-on-surface uppercase tracking-wide">
                 Vehicle Diagnostic Report
               </span>
@@ -191,22 +200,28 @@ export default function DiagnosticReport({
               SECTION A: FORMAL DOCUMENT HEADER
              ========================================================================= */}
           <header className="border-b-2 border-slate-900 pb-5 flex flex-col sm:flex-row sm:items-start justify-between gap-4 report-avoid-break">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2">
-                <span className="w-8 h-8 rounded bg-slate-900 text-white flex items-center justify-center font-bold text-sm tracking-wider">
-                  AS
-                </span>
+            <div className="space-y-2">
+              <div className="flex items-center gap-3">
+                <img
+                  src={autoSageLogo}
+                  alt="Auto Sage Logo"
+                  className="h-10 sm:h-12 w-auto object-contain select-none shrink-0"
+                  onError={(e) => {
+                    e.currentTarget.src = "/images/auto-sage-brand-logo.png";
+                  }}
+                />
+                <div className="h-8 w-px bg-slate-300 hidden sm:block" />
                 <div>
-                  <div className="font-extrabold text-sm tracking-wider uppercase text-slate-900">
-                    Auto Sage Diagnostic Systems
+                  <div className="font-extrabold text-xs sm:text-sm tracking-wider uppercase text-slate-900 leading-tight">
+                    Diagnostic Systems
                   </div>
                   <div className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">
-                    Automotive Engineering &bull; Vehicle Inspection Division
+                    Automotive Engineering &bull; Inspection Division
                   </div>
                 </div>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-1">
                 <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight uppercase">
                   Vehicle Diagnostic Report
                 </h1>
@@ -795,7 +810,16 @@ export default function DiagnosticReport({
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-3 border-t border-slate-200 text-xs">
                 <div>
                   <span className="block text-[10px] font-bold uppercase text-slate-500">Service Facility</span>
-                  <span className="text-slate-900 font-semibold">Auto Sage Diagnostics</span>
+                  <div className="flex items-center gap-1.5 my-1">
+                    <img
+                      src={autoSageLogo}
+                      alt="Auto Sage"
+                      className="h-4 w-auto object-contain select-none opacity-85"
+                      onError={(e) => {
+                        e.currentTarget.src = "/images/auto-sage-brand-logo.png";
+                      }}
+                    />
+                  </div>
                   <span className="block text-[10px] text-slate-500">Bay 04 &bull; Triage</span>
                 </div>
                 <div>
@@ -822,7 +846,25 @@ export default function DiagnosticReport({
           {/* =========================================================================
               SECTION L: DISCLAIMER & FORMAL CITATION FOOTER
              ========================================================================= */}
-          <footer className="pt-4 border-t border-slate-300 text-[10px] text-slate-600 space-y-1.5 report-avoid-break">
+          <footer className="pt-4 border-t border-slate-300 text-[10px] text-slate-600 space-y-2 report-avoid-break">
+            <div className="flex items-center justify-between pb-1 border-b border-slate-200">
+              <div className="flex items-center gap-2">
+                <img
+                  src={autoSageLogo}
+                  alt="Auto Sage"
+                  className="h-3.5 w-auto object-contain select-none opacity-75"
+                  onError={(e) => {
+                    e.currentTarget.src = "/images/auto-sage-brand-logo.png";
+                  }}
+                />
+                <span className="text-[9px] uppercase tracking-wider font-bold text-slate-500">
+                  Automotive Diagnostic &amp; Inspection Systems
+                </span>
+              </div>
+              <span className="font-mono text-[9px] text-slate-400">
+                Document Ref: {reportId}
+              </span>
+            </div>
             <p className="leading-snug">
               <strong>Diagnostic Disclaimer:</strong> This document is generated by Auto Sage for preliminary vehicle fault
               triage and inspection planning. Diagnostic hypotheses are derived strictly from user-reported symptom observations
