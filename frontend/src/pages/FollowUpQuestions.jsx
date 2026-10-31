@@ -75,7 +75,7 @@ export default function FollowUpQuestions({
       const result = await diagnose(categoryId, selectedSymptomIds, finalAnswers);
       onDiagnosisComplete(result, finalAnswers);
     } catch (err) {
-      setError(err.message || "Inference engine error during diagnosis.");
+      setError(err.message || "Diagnostic service error during evaluation.");
       setSubmitting(false);
       inFlight.current = false;
     }
@@ -117,10 +117,9 @@ export default function FollowUpQuestions({
         </div>
 
         <p className="mt-space-sm text-on-surface-variant text-sm md:text-base leading-relaxed">
-          The inference engine has identified candidate fault hypotheses matching your{" "}
-          <strong>{selectedSymptomIds.length}</strong> reported symptom
-          {selectedSymptomIds.length === 1 ? "" : "s"}. Answering these targeted follow-up questions provides
-          corroborating or contradictory evidence to disambiguate the true root cause.
+          Based on your <strong>{selectedSymptomIds.length}</strong> reported symptom
+          {selectedSymptomIds.length === 1 ? "" : "s"}, answering these targeted follow-up questions provides
+          helpful clarifying details to pinpoint the root cause.
         </p>
 
         {/* Selected Symptoms Summary Chips */}
@@ -145,10 +144,10 @@ export default function FollowUpQuestions({
         <div className="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm text-center">
           <div className="inline-block w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mb-space-sm" />
           <h2 className="text-base font-semibold text-on-surface">
-            Querying Knowledge Base Hypotheses...
+            Analyzing Reported Symptoms...
           </h2>
           <p className="text-xs text-on-surface-variant mt-1">
-            Matching rules and extracting discriminatory follow-up tests for your symptoms.
+            Determining relevant diagnostic inspection questions for your symptoms.
           </p>
         </div>
       ) : error && questions.length === 0 ? (
@@ -187,7 +186,7 @@ export default function FollowUpQuestions({
               Direct Evidence Sufficient
             </h2>
             <p className="text-sm text-on-surface-variant max-w-lg mx-auto mt-1">
-              The selected symptoms provide sufficient unambiguous evidence for rule evaluation without requiring secondary follow-up inquiry.
+              The selected symptoms provide sufficient diagnostic information to proceed directly without requiring secondary follow-up questions.
             </p>
           </div>
           <div className="pt-2 flex justify-center gap-3">
@@ -207,11 +206,11 @@ export default function FollowUpQuestions({
               {submitting ? (
                 <>
                   <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Running Inference...
+                  Running Diagnosis...
                 </>
               ) : (
                 <>
-                  <span>Run Deterministic Diagnosis</span>
+                  <span>Run Diagnosis</span>
                   <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </>
               )}
@@ -241,12 +240,12 @@ export default function FollowUpQuestions({
                       <span className="w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center text-xs font-bold">
                         {idx + 1}
                       </span>
-                      <span>INQUIRY TEST {idx + 1} OF {questions.length}</span>
+                      <span>DIAGNOSTIC QUESTION {idx + 1} OF {questions.length}</span>
                     </div>
 
                     {q.relevant_faults && q.relevant_faults.length > 0 && (
                       <span className="text-[11px] px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">
-                        Hypothesis: {q.relevant_faults[0]}
+                        Related Issue: {q.relevant_faults[0]}
                       </span>
                     )}
                   </div>
@@ -336,7 +335,7 @@ export default function FollowUpQuestions({
                 onClick={() => handleDiagnose({})}
                 disabled={submitting}
                 className="px-4 py-2 bg-surface-container-high text-on-surface font-semibold rounded-lg hover:bg-surface-container transition-colors text-xs"
-                title="Run inference engine with symptom evidence only, without follow-up answers"
+                title="Run diagnosis with symptom evidence only, without follow-up answers"
               >
                 Skip Questions
               </button>
@@ -350,11 +349,11 @@ export default function FollowUpQuestions({
                 {submitting ? (
                   <>
                     <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Evaluating Inference...</span>
+                    <span>Evaluating Diagnosis...</span>
                   </>
                 ) : (
                   <>
-                    <span>Evaluate Evidence & Diagnose</span>
+                    <span>Complete Diagnosis</span>
                     <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                   </>
                 )}

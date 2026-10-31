@@ -116,7 +116,7 @@ export function RuleEvidence({ match }) {
         </div>
       )}
 
-      {/* Structured Evidence Breakdown (CLO 1 & CLO 2) */}
+      {/* Diagnostic Evidence Breakdown */}
       <div className="space-y-2">
         {/* Supporting Evidence */}
         {supporting.length > 0 && (
@@ -135,12 +135,12 @@ export function RuleEvidence({ match }) {
           </div>
         )}
 
-        {/* Missing / Unverified Evidence */}
+        {/* Missing Evidence / Additional Symptoms to Check */}
         {missing.length > 0 && (
           <div>
             <span className="font-label-caps text-[10px] text-amber-900 font-bold uppercase tracking-wider block mb-1 flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px] text-amber-700">help</span>
-              Unconfirmed / Missing Evidence ({missing.length})
+              Additional Symptoms to Check ({missing.length})
             </span>
             <div className="flex flex-wrap gap-1.5">
               {missing.map((ev, i) => (
@@ -152,12 +152,12 @@ export function RuleEvidence({ match }) {
           </div>
         )}
 
-        {/* Contradictory Evidence */}
+        {/* Conflicting Findings */}
         {contradictory.length > 0 && (
           <div>
             <span className="font-label-caps text-[10px] text-error font-bold uppercase tracking-wider block mb-1 flex items-center gap-1">
               <span className="material-symbols-outlined text-[14px] text-error">cancel</span>
-              Contradictory Evidence ({contradictory.length})
+              Conflicting Findings ({contradictory.length})
             </span>
             <div className="flex flex-wrap gap-1.5">
               {contradictory.map((ev, i) => (
@@ -173,7 +173,7 @@ export function RuleEvidence({ match }) {
         {Array.isArray(match.unaccounted_symptom_labels) && match.unaccounted_symptom_labels.length > 0 && (
           <div>
             <span className="font-label-caps text-[10px] text-on-surface-variant font-medium uppercase tracking-wider block mb-1">
-              Selected but Unrelated to This Component ({match.unaccounted_symptom_labels.length})
+              Other Reported Symptoms (Associated with Different Subsystems) ({match.unaccounted_symptom_labels.length})
             </span>
             <div className="flex flex-wrap gap-1.5">
               {match.unaccounted_symptom_labels.map((l) => (
@@ -185,44 +185,6 @@ export function RuleEvidence({ match }) {
           </div>
         )}
       </div>
-
-      {/* Collapsible Technical Propositional Logic Block (CLO 1 / CLO 3 Academic Evaluation) */}
-      <details className="group border border-outline-variant/30 rounded-lg overflow-hidden bg-surface-container-lowest mt-1">
-        <summary className="cursor-pointer px-3 py-2 bg-surface-container-low text-on-surface font-label-caps text-[11px] font-semibold flex items-center justify-between hover:bg-surface-container transition-colors">
-          <span className="flex items-center gap-1.5">
-            <span className="material-symbols-outlined text-[16px] text-primary">code</span>
-            Formal Propositional Rule &amp; Inference Trace (CLO 1 / CLO 3)
-          </span>
-          <span className="material-symbols-outlined text-[16px] group-open:rotate-180 transition-transform">
-            expand_more
-          </span>
-        </summary>
-        <div className="p-3 space-y-2 bg-inverse-surface text-inverse-on-surface font-mono text-[11px]">
-          <div>
-            <span className="text-secondary-fixed block text-[10px] uppercase font-bold tracking-wider">
-              Logical Rule Expression:
-            </span>
-            <code className="text-primary-fixed break-words block mt-0.5">
-              {match.rule_expression || `Rule ${match.rule_id}`}
-            </code>
-          </div>
-          <div className="grid grid-cols-2 gap-2 pt-1 border-t border-inverse-on-surface/20 text-[10px]">
-            <div>
-              <span className="text-outline-variant">Logic Mode:</span>{" "}
-              <span className="text-inverse-on-surface font-bold">{match.logic_mode || "ALL"}</span>
-            </div>
-            <div>
-              <span className="text-outline-variant">Match Status:</span>{" "}
-              <span className="text-inverse-on-surface font-bold">{match.match_type}</span>
-            </div>
-          </div>
-          {ref.doi && (
-            <div className="pt-1 border-t border-inverse-on-surface/20 text-[10px] text-inverse-on-surface/80">
-              Corpus Origin: {ref.source_file} · DOI: {ref.doi} ({ref.license})
-            </div>
-          )}
-        </div>
-      </details>
     </div>
   );
 }

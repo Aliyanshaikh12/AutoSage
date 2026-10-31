@@ -339,22 +339,30 @@ def _build_match(
     else:
         next_test = "Perform physical bench inspection of component assembly."
 
-    # Explanation in clear language
+    # Explanation in clear, natural automotive language
+    comp_name = rule.get("affected_component", rule["title"])
+    matched_text = ", ".join(labels(matched))
     if match_type == "full" and not contradictory_evidence:
-        explanation = (
-            f"The observed symptom(s) {', '.join(repr(l) for l in labels(matched))} "
-            f"support the hypothesis of a {rule['possible_fault'].lower()}. "
-            f"Affects the {rule.get('affected_component', rule['title'])}."
-        )
+        if supporting_followup_count > 0:
+            explanation = (
+                f"Your reported symptom ({matched_text}) along with your follow-up findings "
+                f"strongly indicate a potential issue with the {comp_name}."
+            )
+        else:
+            explanation = (
+                f"Your reported symptom ({matched_text}) indicates a potential problem "
+                f"with the {comp_name}."
+            )
     elif contradictory_evidence:
         explanation = (
-            f"Although symptom(s) {', '.join(repr(l) for l in labels(matched))} were reported, "
-            f"follow-up answers indicate conditions inconsistent with a failed {rule['title']}."
+            f"Although you noticed {matched_text}, your follow-up findings indicate conditions "
+            f"inconsistent with a failed {comp_name}."
         )
     else:
+        missing_text = ", ".join(labels(missing))
         explanation = (
-            f"You reported {', '.join(repr(l) for l in labels(matched))}, but rule {rule['rule_id']} "
-            f"also lists {', '.join(repr(l) for l in labels(missing))}. This remains a partial candidate."
+            f"You reported {matched_text}, which can be associated with the {comp_name}. "
+            f"However, other common signs ({missing_text}) were not reported, so further physical inspection is required."
         )
 
     fc_id = rule.get("related_flowchart_id")
