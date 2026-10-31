@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 import { vehicleLabel } from "../stitch/dom.js";
 
 const NAV_ITEMS = [
-  { page: "dashboard", path: "dashboard-home", icon: "speed", title: "Home" },
-  { page: "vehicle", path: "new-diagnosis", icon: "troubleshoot", title: "New Diagnosis" },
-  { page: "history", path: "diagnosis-history", icon: "history", title: "Diagnosis History" },
-  { page: "knowledge_base", path: "knowledge-base", icon: "menu_book", title: "Knowledge Base" },
-  { page: "report", path: "diagnostic-reports", icon: "analytics", title: "Diagnostic Reports" },
-  { page: null, path: "system-settings", icon: "tune", title: "Settings" },
+  { page: "dashboard", path: "dashboard", icon: "speed", title: "Dashboard" },
+  { page: "vehicle", path: "vehicle", icon: "directions_car", title: "Vehicle Information" },
+  { page: "symptoms", path: "diagnosis", icon: "troubleshoot", title: "Start Diagnosis" },
+  { page: "history", path: "history", icon: "history", title: "Diagnosis History" },
+  { page: "safety_guide", path: "safety-guide", icon: "health_and_safety", title: "Safety Guide" },
 ];
 
 const ACTIVE_CLASS =
@@ -48,8 +47,10 @@ export default function Layout({
     if (event.key !== "Enter") return;
     event.preventDefault();
     const query = searchValue.trim();
-    onSearch?.(query);
-    setPage("knowledge_base");
+    if (query) {
+      onSearch?.(query);
+      setPage("symptoms");
+    }
   };
 
   return (
@@ -97,18 +98,12 @@ export default function Layout({
           </nav>
         </div>
         <div className="flex flex-col items-center w-full pb-space-xs">
-          <a
-            className="group flex items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all"
-            data-path="sign-out"
-            href="#sign-out"
-            title="Logout"
-            onClick={(event) => {
-              event.preventDefault();
-              showToast("Auto Sage runs locally. There is no account to sign out of.");
-            }}
+          <div
+            className="flex items-center justify-center w-10 h-10 rounded-xl text-on-surface-variant hover:text-primary transition-colors cursor-default"
+            title="Auto Sage Local KBS Engine Active"
           >
-            <span className="material-symbols-outlined text-[22px]">logout</span>
-          </a>
+            <span className="material-symbols-outlined text-[20px]">verified_user</span>
+          </div>
         </div>
       </aside>
 
@@ -144,34 +139,22 @@ export default function Layout({
                 </span>
                 <input
                   className="w-64 lg:w-80 h-9 pl-9 pr-space-md rounded-full bg-surface-container-low text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all"
-                  placeholder="Search faults, symptoms, or rules..."
+                  placeholder="Search symptoms or faults..."
                   type="text"
                   value={searchValue}
                   onChange={(event) => setSearchValue(event.target.value)}
                   onKeyDown={submitSearch}
-                  aria-label="Search the knowledge base"
+                  aria-label="Search symptoms or faults"
                 />
               </div>
               <button
-                className="relative p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
                 type="button"
-                onClick={() => showToast("No notifications. All processing happens locally.")}
-                title="Notifications"
+                onClick={() => navigate("symptoms")}
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-headline-sm text-xs hover:bg-primary/90 shadow-sm transition-all"
               >
-                <span className="material-symbols-outlined text-[20px]">notifications</span>
+                <span className="material-symbols-outlined text-[16px]">add_circle</span>
+                <span>New Diagnosis</span>
               </button>
-              <div className="flex items-center gap-space-sm pl-space-xs">
-                <button
-                  className="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
-                  type="button"
-                  onClick={() => showToast("Local session. No account or cloud sync is used.")}
-                  title="Local session"
-                >
-                  <span className="material-symbols-outlined text-on-primary text-[18px]">
-                    person
-                  </span>
-                </button>
-              </div>
             </div>
           </div>
         </header>

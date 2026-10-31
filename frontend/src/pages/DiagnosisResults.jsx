@@ -495,11 +495,11 @@ function CandidateCard({ match, rank, onDetails, onGuide }) {
         )}
 
         <div className="flex flex-wrap gap-space-sm mt-auto pt-space-xs no-print">
-          <Btn icon="info" onClick={onDetails}>
-            Component Dossier
+          <Btn icon="build_circle" primary onClick={onGuide}>
+            Repair &amp; Mitigation Guide
           </Btn>
-          <Btn icon="health_and_safety" onClick={onGuide}>
-            Safety Protocols
+          <Btn icon="info" onClick={onDetails}>
+            Component Details
           </Btn>
         </div>
       </div>

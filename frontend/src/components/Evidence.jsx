@@ -47,13 +47,13 @@ export function SafetyBadge({ level }) {
 }
 
 export function StatusBadge({ match }) {
-  const status = match?.diagnosis_status || (match?.match_type === "partial" ? "Requires Further Inspection" : "Suspected Fault");
+  const status = String(match?.diagnosis_status || (match?.match_type === "partial" ? "Further Inspection Required" : "Possible Fault Identified"));
   
-  if (status.includes("Corroborated")) {
+  if (status.includes("Corroborated") || status.includes("Supports")) {
     return (
       <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-[11px] font-bold uppercase bg-emerald-100 text-emerald-900 border border-emerald-300">
         <span className="material-symbols-outlined text-[14px] text-emerald-700">verified</span>
-        Corroborated Hypothesis
+        Evidence Supports This Fault
       </span>
     );
   }
@@ -61,22 +61,30 @@ export function StatusBadge({ match }) {
     return (
       <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-[11px] font-medium uppercase bg-rose-50 text-rose-800 border border-rose-300">
         <span className="material-symbols-outlined text-[14px] text-rose-600">cancel</span>
-        Contradicted by Findings
+        Fault Not Supported by Evidence
       </span>
     );
   }
-  if (status.includes("Requires Further") || match?.match_type === "partial") {
+  if (status.includes("Further") || status.includes("Partial") || match?.match_type === "partial") {
     return (
       <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-[11px] font-medium uppercase bg-amber-100 text-amber-900 border border-amber-300">
         <span className="material-symbols-outlined text-[14px] text-amber-700">hourglass_top</span>
-        Partial Match · Needs Inspection
+        Further Inspection Required
+      </span>
+    );
+  }
+  if (status.includes("Insufficient")) {
+    return (
+      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-[11px] font-medium uppercase bg-slate-100 text-slate-700 border border-slate-300">
+        <span className="material-symbols-outlined text-[14px] text-slate-500">help</span>
+        Insufficient Information
       </span>
     );
   }
   return (
     <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-caps text-[11px] font-bold uppercase bg-primary-fixed text-on-primary-fixed border border-primary/20">
       <span className="material-symbols-outlined text-[14px] text-primary">rule</span>
-      Suspected Fault · Unconfirmed
+      Possible Fault Identified
     </span>
   );
 }

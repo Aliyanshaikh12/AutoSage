@@ -6,8 +6,8 @@ import SymptomSelection from "./pages/SymptomSelection.jsx";
 import FollowUpQuestions from "./pages/FollowUpQuestions.jsx";
 import DiagnosisResults from "./pages/DiagnosisResults.jsx";
 import FaultDetails from "./pages/FaultDetails.jsx";
-import RepairSafetyGuide from "./pages/RepairSafetyGuide.jsx";
-import KnowledgeBase from "./pages/KnowledgeBase.jsx";
+import RepairMitigationGuide from "./pages/RepairMitigationGuide.jsx";
+import SafetyGuide from "./pages/SafetyGuide.jsx";
 import History from "./pages/History.jsx";
 import DiagnosticReport from "./pages/DiagnosticReport.jsx";
 import {
@@ -24,8 +24,8 @@ const PAGES = {
   RESULTS: "results",
   FAULT_DETAILS: "fault_details",
   REPAIR_GUIDE: "repair_guide",
+  SAFETY_GUIDE: "safety_guide",
   HISTORY: "history",
-  KNOWLEDGE_BASE: "knowledge_base",
   REPORT: "report",
 };
 
@@ -38,7 +38,6 @@ export default function App() {
   const [diagnosisResult, setDiagnosisResult] = useState(null);
   const [reviewedTimestamp, setReviewedTimestamp] = useState(null);
   const [faultDetailMatch, setFaultDetailMatch] = useState(null);
-  const [knowledgeQuery, setKnowledgeQuery] = useState("");
   const [toast, setToast] = useState(null);
   const [historyCount, setHistoryCount] = useState(() => readHistoryRecords().records.length);
 
@@ -143,7 +142,7 @@ export default function App() {
         setToast("Run a diagnosis before opening a diagnostic report.");
         return;
       }
-      if ((next === PAGES.RESULTS || next === PAGES.FAULT_DETAILS) && !diagnosisResult) {
+      if ((next === PAGES.RESULTS || next === PAGES.FAULT_DETAILS || next === PAGES.REPAIR_GUIDE) && !diagnosisResult) {
         setToast("Run a diagnosis first.");
         return;
       }
@@ -162,16 +161,17 @@ export default function App() {
       setPage={navigate}
       vehicle={vehicleInfo}
       historyCount={historyCount}
-      onSearch={setKnowledgeQuery}
       toast={toast}
       onToast={setToast}
     >
       {page === PAGES.DASHBOARD && (
         <Dashboard
           onStartDiagnosis={startNewDiagnosis}
+          onOpenVehicle={() => setPage(PAGES.VEHICLE)}
           onOpenHistoryRecord={openHistoryRecord}
-          onOpenKnowledgeBase={() => setPage(PAGES.KNOWLEDGE_BASE)}
           onOpenHistory={() => setPage(PAGES.HISTORY)}
+          onOpenSafetyGuide={() => setPage(PAGES.SAFETY_GUIDE)}
+          vehicleInfo={vehicleInfo}
           historyCount={historyCount}
         />
       )}
@@ -246,9 +246,16 @@ export default function App() {
       )}
 
       {page === PAGES.REPAIR_GUIDE && (
-        <RepairSafetyGuide
+        <RepairMitigationGuide
           match={faultDetailMatch}
           diagnosisResult={diagnosisResult}
+          onBack={() => setPage(diagnosisResult ? PAGES.RESULTS : PAGES.DASHBOARD)}
+          onStartReEvaluation={() => startNewDiagnosis(diagnosisResult?.category_id)}
+        />
+      )}
+
+      {page === PAGES.SAFETY_GUIDE && (
+        <SafetyGuide
           onBack={() => setPage(diagnosisResult ? PAGES.RESULTS : PAGES.DASHBOARD)}
         />
       )}
@@ -260,10 +267,6 @@ export default function App() {
           onStartNewDiagnosis={() => startNewDiagnosis(null)}
           onHistoryCountChange={setHistoryCount}
         />
-      )}
-
-      {page === PAGES.KNOWLEDGE_BASE && (
-        <KnowledgeBase initialQuery={knowledgeQuery} onStartDiagnosis={startNewDiagnosis} />
       )}
 
       {page === PAGES.REPORT && diagnosisResult && (

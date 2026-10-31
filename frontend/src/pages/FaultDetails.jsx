@@ -1,63 +1,137 @@
-import { FlowchartPanel, RecommendedChecks, RuleEvidence, StatusBadge } from "../components/Evidence.jsx";
+import { FlowchartPanel, RecommendedChecks, RuleEvidence, SafetyBadge, StatusBadge } from "../components/Evidence.jsx";
 
 export default function FaultDetails({ match, onBackToResults, onViewRepairGuide }) {
   if (!match) {
     return (
-      <div className="p-space-lg max-w-3xl mx-auto text-center">
-        <p className="font-body-md text-on-surface-variant">No fault is selected.</p>
-        <button type="button" className="mt-space-md text-primary underline" onClick={onBackToResults}>Back to results</button>
+      <div className="p-space-lg max-w-xl mx-auto text-center space-y-4">
+        <p className="font-body-md text-on-surface-variant">No fault candidate is currently selected.</p>
+        <button
+          type="button"
+          className="px-4 py-2 bg-primary text-on-primary rounded-lg text-xs font-semibold"
+          onClick={onBackToResults}
+        >
+          Back to Results
+        </button>
       </div>
     );
   }
-  return (
-    <div className="w-full px-space-md md:px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1200px] mx-auto">
-      <div>
-        <button type="button" onClick={onBackToResults} className="flex items-center gap-1 text-body-sm text-secondary hover:text-primary">
-          <span className="material-symbols-outlined text-[16px]">arrow_back</span>Back to results
-        </button>
-        <div className="flex flex-wrap items-center gap-space-xs mt-space-xs">
-          <StatusBadge match={match} />
-          <span className="font-mono text-[11px] text-on-surface-variant">{match.rule_id}</span>
-          {match.category_name && <span className="text-[12px] text-on-surface-variant">· {match.category_name}</span>}
-        </div>
-        <h1 className="font-headline-lg text-headline-lg text-on-surface tracking-tight">{match.title || match.possible_fault}</h1>
-      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+  const consequences = [
+    "Continued operation may induce progressive thermal or mechanical stress on adjacent assemblies.",
+    "Compromised vehicle handling, degraded braking efficiency, or elevated tailpipe emissions.",
+    "Potential escalation into high-cost catastrophic component failure if left uninspected.",
+  ];
+
+  return (
+    <div className="w-full px-space-md md:px-space-lg py-space-md flex flex-col gap-space-lg max-w-[1300px] mx-auto pb-24">
+      {/* Top Header Card */}
+      <section className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md md:p-space-lg border border-surface-container space-y-2">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs border-b border-surface-container">
+          <button
+            type="button"
+            onClick={onBackToResults}
+            className="flex items-center gap-1.5 text-xs text-secondary hover:text-primary transition-colors font-semibold self-start"
+          >
+            <span className="material-symbols-outlined text-[16px]">arrow_back</span>
+            <span>Back to Diagnosis Results</span>
+          </button>
+
+          <div className="flex items-center gap-2">
+            {match.safety_level && <SafetyBadge level={match.safety_level} />}
+            <StatusBadge match={match} />
+          </div>
+        </div>
+
+        <div>
+          <span className="font-mono text-[11px] text-outline font-medium">{match.rule_id}</span>
+          <h1 className="font-headline-lg text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight mt-0.5">
+            {match.possible_fault || match.title}
+          </h1>
+          <p className="text-xs text-on-surface-variant mt-1">
+            Subsystem: <strong>{match.subsystem || match.category_name}</strong> &bull; Target Component:{" "}
+            <strong>{match.affected_component || "Subsystem Assembly"}</strong>
+          </p>
+        </div>
+      </section>
+
+      {/* Main Grid: Left 7 cols (Evidence & Tests), Right 5 cols (Guidance & Safety) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
         <div className="lg:col-span-7 flex flex-col gap-space-md">
-          <Card title="Knowledge-base rule">
+          {/* Component & Evidence Dossier */}
+          <Card title="Component & Diagnostic Evidence Breakdown">
             <RuleEvidence match={match} />
           </Card>
-          <Card title="Inspection procedure (from dataset)">
+
+          {/* Diagnostic Verification Bench Checks */}
+          <Card title="Recommended Bench Verification Checks (Dataset Procedures)">
+            <p className="text-xs text-on-surface-variant mb-2">
+              Physical tests that must be conducted to corroborate or refute this fault candidate before disassembling components:
+            </p>
             <RecommendedChecks steps={match.diagnosis_steps} />
           </Card>
+
+          {/* Flowchart if available */}
           {match.related_flowchart && (
-            <Card title="Related diagnostic flowchart">
+            <Card title="Associated Diagnostic Decision Tree">
               <FlowchartPanel flowchart={match.related_flowchart} />
             </Card>
           )}
         </div>
+
         <div className="lg:col-span-5 flex flex-col gap-space-md">
-          <Card title="Why it matched">
-            <p className="text-body-sm text-on-surface">{match.explanation}</p>
+          {/* Why it was suggested */}
+          <Card title="Diagnostic Explanation">
+            <p className="text-xs text-on-surface leading-relaxed">
+              {match.explanation || "Isolated based on matching observed vehicle operating conditions."}
+            </p>
           </Card>
-          {Array.isArray(match.possible_causes) && match.possible_causes.length > 0 && (
-            <Card title="Fault findings to look for">
-              <ul className="list-disc pl-5 text-[13px] text-on-surface space-y-1">
-                {match.possible_causes.map((c) => <li key={c}>{c}</li>)}
-              </ul>
-            </Card>
-          )}
-          {match.suggested_next_steps && (
-            <Card title="Suggested next steps">
-              <p className="text-[13px] text-on-surface">{match.suggested_next_steps}</p>
-            </Card>
-          )}
-          <Card title="Safety">
-            <p className="text-[13px] text-on-surface-variant">{match.safety_warning || "Follow standard workshop safety precautions."}</p>
-            <button type="button" onClick={onViewRepairGuide} className="mt-space-sm w-full py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-body-sm">
-              Open safety guide
-            </button>
+
+          {/* Root causes */}
+          <Card title="Known Root Causes & Findings to Look For">
+            <ul className="space-y-1.5 text-xs text-on-surface">
+              {(Array.isArray(match.possible_causes) && match.possible_causes.length > 0
+                ? match.possible_causes
+                : [
+                    "Mechanical wear or fatigue of internal moving components.",
+                    "Loss of hydraulic or pneumatic seal pressure.",
+                    "Electrical contact corrosion or sensor signal drift.",
+                  ]
+              ).map((cause, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="material-symbols-outlined text-primary text-[16px] shrink-0 mt-0.5">check_circle</span>
+                  <span>{cause}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+
+          {/* Consequences */}
+          <Card title="Possible Consequences If Unaddressed">
+            <ul className="space-y-1 text-xs text-on-surface-variant">
+              {consequences.map((c, i) => (
+                <li key={i} className="flex items-start gap-1.5">
+                  <span className="material-symbols-outlined text-amber-700 text-[14px] shrink-0 mt-0.5">warning</span>
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+
+          {/* Safety & Action Button */}
+          <Card title="Safety Advisory & Workshop Guidance">
+            <p className="text-xs text-on-surface-variant leading-relaxed">
+              {match.safety_warning || "Adhere to standard workshop safety procedures. Never replace components without bench verification."}
+            </p>
+            <div className="pt-2 border-t border-surface-container mt-2">
+              <button
+                type="button"
+                onClick={onViewRepairGuide}
+                className="w-full py-2.5 px-3 rounded-lg bg-primary-container text-on-primary font-headline-sm text-xs font-semibold hover:bg-primary transition-all shadow-sm flex items-center justify-center gap-1.5"
+              >
+                <span className="material-symbols-outlined text-[16px]">build_circle</span>
+                <span>Open Full Repair &amp; Mitigation Guide</span>
+              </button>
+            </div>
           </Card>
         </div>
       </div>
@@ -67,8 +141,10 @@ export default function FaultDetails({ match, onBackToResults, onViewRepairGuide
 
 function Card({ title, children }) {
   return (
-    <section className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
-      <h2 className="font-label-caps text-label-caps text-on-surface-variant mb-space-sm uppercase">{title}</h2>
+    <section className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md border border-surface-container">
+      <h2 className="font-label-caps text-[11px] text-on-surface-variant mb-space-sm uppercase font-bold tracking-wider">
+        {title}
+      </h2>
       {children}
     </section>
   );
