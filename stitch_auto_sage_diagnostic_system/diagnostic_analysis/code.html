@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-bright":"#f7f9fc","secondary-fixed-dim":"#c5c6cd","error-container":"#ffdad6","surface-dim":"#d8dadd","secondary-fixed":"#e2e2e9","surface":"#f7f9fc","on-primary-fixed":"#00174b","tertiary-fixed":"#dce3ec","outline":"#737686","surface-variant":"#e0e3e6","surface-container-high":"#e6e8eb","on-surface-variant":"#434655","tertiary-container":"#676e76","on-tertiary-fixed-variant":"#40484f","on-tertiary":"#ffffff","surface-container-lowest":"#ffffff","on-error":"#ffffff","on-secondary-fixed":"#191c20","on-error-container":"#93000a","on-tertiary-fixed":"#151c23","on-background":"#191c1e","on-primary-fixed-variant":"#003ea8","inverse-on-surface":"#eff1f4","on-tertiary-container":"#eaf1fa","surface-container-low":"#f2f4f7","outline-variant":"#c3c6d7","secondary-container":"#e2e2e9","background":"#f7f9fc","surface-container":"#eceef1","primary":"#004ac6","primary-container":"#2563eb","on-secondary-container":"#63646a","inverse-surface":"#2d3133","on-primary":"#ffffff","error":"#ba1a1a","primary-fixed-dim":"#b4c5ff","on-primary-container":"#eeefff","tertiary-fixed-dim":"#c0c7d0","inverse-primary":"#b4c5ff","surface-container-highest":"#e0e3e6","primary-fixed":"#dbe1ff","surface-tint":"#0053db","secondary":"#5d5e64","on-secondary-fixed-variant":"#45474c","on-surface":"#191c1e","tertiary":"#4e565d","on-secondary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-sm":"0.5rem","margin":"1.5rem","space-md":"1rem","space-xl":"2rem","gutter":"1.25rem","space-lg":"1.5rem"},"fontFamily":{"body-lg":["Inter"],"body-md":["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"],"telemetry-value-lg":["Inter"],"headline-sm":["Inter"],"telemetry-value-md":["Inter"],"display-hero":["Inter"],"headline-lg-mobile":["Inter"],"label-caps":["Inter"],"body-sm":["Inter"]},"fontSize":{"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"telemetry-value-lg":["36px",{"lineHeight":"40px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"telemetry-value-md":["20px",{"lineHeight":"24px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"800"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-20 bg-surface-container-lowest z-50 flex flex-col items-center py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] justify-between"><div class="flex flex-col items-center w-full gap-space-lg"><div class="flex items-center justify-center w-12 h-12 rounded-xl bg-primary text-on-primary shadow-[0_4px_12px_rgba(0,74,198,0.25)]"><span class="material-symbols-outlined text-[28px]">token</span></div><nav class="flex flex-col items-center gap-space-sm w-full px-space-xs" data-active-classes="bg-primary-container text-on-primary shadow-[0_4px_12px_rgba(37,99,235,0.25)]"><a class="group relative flex items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard-home" href="#" title="Home"><span class="material-symbols-outlined text-[22px]">speed</span></a><a class="group relative flex items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="new-diagnosis,vehicle-info,symptom-selection" href="#" title="New Diagnosis"><span class="material-symbols-outlined text-[22px]">troubleshoot</span></a><a class="group relative flex items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="diagnosis-history" href="#" title="Diagnosis History"><span class="material-symbols-outlined text-[22px]">history</span></a><a class="group relative flex items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="knowledge-base" href="#" title="Knowledge Base"><span class="material-symbols-outlined text-[22px]">menu_book</span></a><a class="group relative flex items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="diagnostic-reports" href="#" title="Diagnostic Reports"><span class="material-symbols-outlined text-[22px]">analytics</span></a><a class="group relative flex items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="system-settings" href="#" title="Settings"><span class="material-symbols-outlined text-[22px]">tune</span></a></nav></div><div class="flex flex-col items-center w-full pb-space-xs"><a class="group flex items-center justify-center w-12 h-12 rounded-xl text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all" data-path="sign-out" href="#" title="Logout"><span class="material-symbols-outlined text-[22px]">logout</span></a></div></aside><div class="pl-20"><header class="fixed top-0 left-20 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg min-w-0"><div class="flex items-center gap-space-sm shrink-0"><div class="flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-low rounded-lg"><span class="material-symbols-outlined text-primary text-[20px]">directions_car</span><span class="font-headline-sm text-headline-sm text-on-surface truncate">2024 Porsche Taycan 4S</span><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></div></div><div class="h-6 w-px bg-surface-variant hidden md:block shrink-0"></div><span class="font-headline-sm text-headline-sm text-on-surface-variant truncate hidden lg:inline-block">Auto Sage Diagnostic Studio</span></div><div class="flex items-center gap-space-md shrink-0"><div class="relative flex items-center hidden sm:flex"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px] pointer-events-none">search</span><input class="w-64 lg:w-80 h-9 pl-9 pr-space-md rounded-full bg-surface-container-low text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search DTC, CAN frame, component..." type="text"/></div><button class="relative p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full px-space-lg py-space-md flex flex-col gap-space-lg">
+<!-- Top Progress Stepper (4-Step Workflow) -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm relative">
+<!-- Step 1: Vehicle Information (Complete) -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Step 1</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Vehicle Info</span>
+</div>
+</div>
+<!-- Step 2: Symptom Selection (Complete) -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Step 2</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Symptom Input</span>
+</div>
+</div>
+<!-- Step 3: Diagnostic Analysis (Active / In Progress) -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm relative">
+<span class="material-symbols-outlined text-[18px] animate-spin">sync</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Step 3 • Active</span>
+<span class="font-headline-sm text-headline-sm text-primary truncate">Diagnostic Analysis</span>
+</div>
+</div>
+<!-- Step 4: Action Plan / Results (Pending) -->
+<div class="flex items-center gap-space-sm p-space-xs rounded-lg opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="font-label-caps text-label-caps">04</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Step 4</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant truncate">Action Plan</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Diagnostic Context Summary Bar -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md">
+<!-- Vehicle Badge -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<div class="w-7 h-7 rounded-md bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">electric_car</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Target Platform</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Porsche Taycan 4S <span class="text-on-surface-variant font-normal text-body-sm">(J1-II 800V)</span></span>
+</div>
+</div>
+<!-- Selected Symptoms -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<div class="w-7 h-7 rounded-md bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]">stethoscope</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Active Symptoms</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">2 Recorded <span class="text-on-surface-variant font-normal text-body-sm">(Thermal Loop &amp; Brake Blend)</span></span>
+</div>
+</div>
+</div>
+<!-- Engine Inference State -->
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-space-xs text-body-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span>Inference Engine: <strong class="text-on-surface">Porsche EV KB v4.28</strong></span>
+</div>
+<div class="h-4 w-px bg-surface-variant hidden sm:block"></div>
+<span class="font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed px-space-sm py-0.5 rounded-full uppercase">
+          Deterministic
+        </span>
+</div>
+</div>
+<!-- Title and Subtitle Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]">troubleshoot</span>
+<span class="font-label-caps text-label-caps uppercase tracking-wider">Evaluation Protocol</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">DIAGNOSTIC ANALYSIS</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Evaluating the selected symptoms against available diagnostic knowledge.
+        </p>
+</div>
+<!-- Live Elapsed Telemetry Counter -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-xs rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">timer</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Pipeline Latency</span>
+<span class="font-telemetry-value-md text-telemetry-value-md text-on-surface tabular-nums" id="pipeline-timer">00:04.82</span>
+</div>
+</div>
+</div>
+<!-- Main Content Two-Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT / MAIN SECTION: Diagnostic Pipeline & Rule Stepper (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Deterministic Pipeline Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">schema</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface">Deterministic Rule Evaluation Pipeline</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Linear fault-tree parsing with verified diagnostic evidence</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps px-space-sm py-1 bg-surface-container-low text-on-surface-variant rounded-md">
+              Stage 3 / 5 Active
+            </span>
+</div>
+<!-- Vertical Pipeline Stepper -->
+<div class="flex flex-col pl-space-xs pt-space-sm">
+<!-- Stage 1: Complete -->
+<div class="flex gap-space-md relative pb-space-lg">
+<div class="w-0.5 bg-primary absolute left-4 top-8 bottom-0"></div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col min-w-0 pt-0.5">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Stage 1: Validate User Inputs &amp; Constraints</span>
+<span class="font-label-caps text-label-caps text-primary bg-primary-fixed px-space-xs py-0.5 rounded">Verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Verified vehicle platform J1-II, powertrain electric bus parameters, and symptom consistency across cold and warm operating states.
+                </p>
+</div>
+</div>
+<!-- Stage 2: Complete -->
+<div class="flex gap-space-md relative pb-space-lg">
+<div class="w-0.5 bg-primary absolute left-4 top-8 bottom-0"></div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex flex-col min-w-0 pt-0.5">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Stage 2: Retrieve Relevant Knowledge Base Records</span>
+<span class="font-label-caps text-label-caps text-primary bg-primary-fixed px-space-xs py-0.5 rounded">14 Rules Loaded</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Isolated 14 subsystem rules across Thermal Management &amp; Regenerative Braking matrices without telemetry interpolation.
+                </p>
+</div>
+</div>
+<!-- Stage 3: In Progress (Active) -->
+<div class="flex gap-space-md relative pb-space-lg">
+<div class="w-0.5 bg-surface-variant absolute left-4 top-8 bottom-0"></div>
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 z-10 shadow-md ring-4 ring-primary-fixed">
+<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span>
+</div>
+<div class="flex flex-col min-w-0 pt-0.5">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Stage 3: Evaluate Matching Diagnostic Rules</span>
+<span class="font-label-caps text-label-caps text-on-primary bg-primary px-space-xs py-0.5 rounded animate-pulse">Running</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium mt-0.5">
+                  Executing deterministic decision trees against 2 active symptoms: Thermal Loop vs Recuperation Inverter logic.
+                </p>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+<!-- Stage 4: Queued -->
+<div class="flex gap-space-md relative pb-space-lg">
+<div class="w-0.5 bg-surface-variant absolute left-4 top-8 bottom-0"></div>
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 z-10">
+<span class="font-label-caps text-label-caps">04</span>
+</div>
+<div class="flex flex-col min-w-0 pt-0.5 opacity-70">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Stage 4: Prepare Possible Diagnoses &amp; Fault Trees</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">Queued</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Synthesizing probable fault candidates, ranking physical inspection requirements and isolation procedures.
+                </p>
+</div>
+</div>
+<!-- Stage 5: Pending -->
+<div class="flex gap-space-md relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 z-10">
+<span class="font-label-caps text-label-caps">05</span>
+</div>
+<div class="flex flex-col min-w-0 pt-0.5 opacity-60">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Stage 5: Generate Diagnostic Explanation &amp; Safety Guidance</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">Pending</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Compiling plain-language explanation, isolation procedures, technician checklist, and High Voltage safety notices.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Rule Engine Stream / Console Preview -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">terminal</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Rule Engine Execution Console</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">LIVE STREAM</span>
+</div>
+</div>
+<!-- Technical Log Terminal (Dark Level 2 Panel) -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-lg p-space-md font-mono text-body-sm overflow-hidden flex flex-col gap-space-xs shadow-inner">
+<div class="flex items-start gap-space-sm">
+<span class="text-primary-fixed-dim shrink-0">[14:22:01.104]</span>
+<span class="text-primary-fixed shrink-0 font-bold">[INFO]</span>
+<span class="text-inverse-on-surface">KB_RULE_EV_084: Condition matched (HV Battery Temp &gt; 48°C during normal load)</span>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="text-primary-fixed-dim shrink-0">[14:22:02.320]</span>
+<span class="text-primary-fixed shrink-0 font-bold">[INFO]</span>
+<span class="text-inverse-on-surface">KB_RULE_BRK_019: Condition matched (Decel torque mismatch during recuperation blend)</span>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="text-primary-fixed-dim shrink-0">[14:22:03.780]</span>
+<span class="text-secondary-fixed shrink-0 font-bold">[CHECK]</span>
+<span class="text-inverse-on-surface">Cross-referencing iBooster electro-hydraulic subsystem with thermal pump circuit</span>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="text-primary-fixed-dim shrink-0">[14:22:04.410]</span>
+<span class="text-tertiary-fixed shrink-0 font-bold">[MATCH]</span>
+<span class="text-inverse-on-surface">Potential secondary constraint: Coolant 3-way distribution valve bypass anomaly</span>
+</div>
+<div class="flex items-start gap-space-sm pt-space-xs">
+<span class="text-primary-fixed-dim shrink-0">[14:22:04.819]</span>
+<span class="text-primary-fixed shrink-0 font-bold">[STATUS]</span>
+<span class="text-inverse-on-surface font-semibold">2 candidate fault trees isolated without live sensor fabrication.</span>
+</div>
+</div>
+</div>
+<!-- Action Button Area -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="w-full sm:w-auto px-space-lg py-space-sm bg-primary text-on-primary rounded-xl font-headline-sm text-headline-sm flex items-center justify-center gap-space-xs shadow-md hover:bg-primary-container transition-all group" type="button">
+<span>View Diagnostic Results</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+<button class="w-full sm:w-auto px-space-md py-space-sm bg-surface-container-low text-on-surface hover:bg-surface-container-high rounded-xl font-headline-sm text-headline-sm transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Modify Symptoms</span>
+</button>
+</div>
+<button class="text-error hover:bg-error-container/40 px-space-md py-space-xs rounded-lg font-body-sm text-body-sm transition-colors flex items-center gap-space-xs shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span>Cancel Analysis</span>
+</button>
+</div>
+</div>
+<!-- RIGHT COLUMN: Contextual Diagnostic Insights & KB Status (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Inference Engine Parameters Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Inference Engine</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Deterministic configuration</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-lg">
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Rule Set:</span>
+<span class="font-semibold text-on-surface font-body-sm">Auto Rules v4.28</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Method:</span>
+<span class="font-semibold text-on-surface font-body-sm">Pure Deterministic FT</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Rule Categories:</span>
+<span class="font-semibold text-primary font-body-sm">12 Subsystems Loaded</span>
+</div>
+<div class="flex justify-between items-center text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Telemetry Simulation:</span>
+<span class="font-semibold text-tertiary font-body-sm">Disabled (Zero Synth)</span>
+</div>
+</div>
+<!-- Graphic Representation: Coverage Donut -->
+<div class="flex items-center gap-space-md p-space-sm bg-surface-container-lowest rounded-lg">
+<div class="w-16 h-16 shrink-0 relative flex items-center justify-center">
+<svg class="w-16 h-16 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="82, 100" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+<span class="absolute font-headline-sm text-headline-sm text-on-surface">82%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Coverage Density</span>
+<span class="font-body-sm text-body-sm text-on-surface">14 of 17 Porsche EV high-voltage trees matched</span>
+</div>
+</div>
+</div>
+<!-- Subsystems Under Active Evaluation Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Subsystems Scope</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">4 MONITORED</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Subsystem 1: Active -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-2.5 h-2.5 rounded-full bg-primary shrink-0 animate-ping"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">HV Battery &amp; Thermal</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Coolant loop &amp; chiller valve</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-primary bg-primary-fixed px-space-xs py-0.5 rounded shrink-0">
+                ACTIVE
+              </span>
+</div>
+<!-- Subsystem 2: Active -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-2.5 h-2.5 rounded-full bg-primary shrink-0 animate-ping"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Recuperation &amp; PSM</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Electro-hydraulic brake blend</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-primary bg-primary-fixed px-space-xs py-0.5 rounded shrink-0">
+                ACTIVE
+              </span>
+</div>
+<!-- Subsystem 3: Excluded -->
+<div class="p-space-sm bg-surface-container-lowest rounded-lg flex items-center justify-between opacity-60">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-variant shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Combined Charging (CCU)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">AC/DC onboard converters</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded shrink-0">
+                STANDBY
+              </span>
+</div>
+<!-- Subsystem 4: Excluded -->
+<div class="p-space-sm bg-surface-container-lowest rounded-lg flex items-center justify-between opacity-60">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-2.5 h-2.5 rounded-full bg-surface-variant shrink-0"></div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-on-surface truncate">Inverter Pulse Units</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Silicon carbide gate drivers</span>
+</div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded shrink-0">
+                STANDBY
+              </span>
+</div>
+</div>
+</div>
+<!-- Technical Assurance & Safety Disclaimer Note -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-primary font-semibold">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-caps text-label-caps uppercase">Diagnostic Assurance</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Auto Sage evaluates established fault trees without simulating unverified live telemetry or generating speculative percentages. All inferences adhere to factory service procedures.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Micro-interaction: Live latency timer ticking up calmly
+    (function() {
+      let seconds = 4;
+      let hundredths = 82;
+      const timerElement = document.getElementById('pipeline-timer');
+      if (timerElement) {
+        setInterval(() => {
+          hundredths += 3;
+          if (hundredths >= 100) {
+            hundredths = 0;
+            seconds++;
+          }
+          const secStr = seconds < 10 ? '0' + seconds : seconds;
+          const hunStr = hundredths < 10 ? '0' + hundredths : hundredths;
+          timerElement.textContent = `00:${secStr}.${hunStr}`;
+        }, 30);
+      }
+    })();
+  </script>
+</div></main></div></body></html>

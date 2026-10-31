@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"secondary":"#5d5e64","secondary-fixed-dim":"#c5c6cd","surface-bright":"#f7f9fc","on-primary-fixed":"#00174b","inverse-primary":"#b4c5ff","tertiary-fixed":"#dce3ec","tertiary":"#4e565d","surface-dim":"#d8dadd","on-tertiary-fixed-variant":"#40484f","outline":"#737686","surface-variant":"#e0e3e6","surface-tint":"#0053db","background":"#f7f9fc","on-secondary":"#ffffff","secondary-container":"#e2e2e9","error":"#ba1a1a","primary-fixed-dim":"#b4c5ff","secondary-fixed":"#e2e2e9","inverse-on-surface":"#eff1f4","on-error-container":"#93000a","error-container":"#ffdad6","surface-container-low":"#f2f4f7","on-surface-variant":"#434655","surface-container-high":"#e6e8eb","tertiary-fixed-dim":"#c0c7d0","primary-fixed":"#dbe1ff","on-tertiary-container":"#eaf1fa","on-primary-container":"#eeefff","surface":"#f7f9fc","inverse-surface":"#2d3133","on-secondary-fixed":"#191c20","primary":"#004ac6","on-secondary-fixed-variant":"#45474c","on-secondary-container":"#63646a","surface-container":"#eceef1","on-primary-fixed-variant":"#003ea8","outline-variant":"#c3c6d7","on-background":"#191c1e","on-error":"#ffffff","on-tertiary":"#ffffff","on-tertiary-fixed":"#151c23","primary-container":"#2563eb","on-primary":"#ffffff","on-surface":"#191c1e","surface-container-highest":"#e0e3e6","tertiary-container":"#676e76","surface-container-lowest":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","gutter":"1.25rem","space-md":"1rem","space-sm":"0.5rem","margin":"1.5rem","space-xl":"2rem","space-lg":"1.5rem"},"fontFamily":{"body-md":["Inter"],"body-lg":["Inter"],"telemetry-value-lg":["Inter"],"headline-lg":["Inter"],"display-hero":["Inter"],"telemetry-value-md":["Inter"],"headline-lg-mobile":["Inter"],"body-sm":["Inter"],"label-caps":["Inter"],"headline-sm":["Inter"],"headline-md":["Inter"]},"fontSize":{"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"400"}],"telemetry-value-lg":["36px",{"lineHeight":"40px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"display-hero":["40px",{"lineHeight":"48px","letterSpacing":"-0.03em","fontWeight":"800"}],"telemetry-value-md":["20px",{"lineHeight":"24px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["22px",{"lineHeight":"28px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"18px","letterSpacing":"0em","fontWeight":"400"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col w-full"><div class="flex items-center gap-space-sm px-space-lg h-16 shrink-0"><div class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary text-on-primary shadow-[0_4px_12px_rgba(0,74,198,0.25)] shrink-0"><span class="material-symbols-outlined text-[24px]">token</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-on-surface truncate">Auto Sage</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Diagnostic Studio</span></div></div><div class="px-space-md py-space-sm"><div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between text-on-surface-variant"><span class="font-label-caps text-label-caps uppercase">Target Vehicle</span><span class="flex items-center gap-1 text-[11px] font-semibold text-primary"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Online</span></div><div class="font-headline-sm text-body-md text-on-surface font-semibold truncate">2024 Porsche Taycan 4S</div><span class="font-body-sm text-body-sm text-on-surface-variant truncate">VIN: WP0AB2Y18RSA92401</span></div></div><nav class="flex flex-col gap-1 px-space-md mt-space-sm overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-[0_4px_12px_rgba(37,99,235,0.25)]"><span class="px-space-sm py-space-xs font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Workspace</span><a class="flex items-center px-space-md py-space-sm rounded-xl text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="diagnostics" href="#">Diagnostics</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="history" href="#">History</a><a class="flex items-center px-space-md py-sm rounded-xl text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="knowledge-base-explorer" href="#">Knowledge Base</a><a class="flex items-center px-space-md py-space-sm rounded-xl text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="diagnostic-report-and-work-order" href="#">Reports</a></nav></div><div class="flex flex-col p-space-md gap-space-xs shrink-0"><div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-body-md text-body-sm font-semibold text-on-surface truncate">Master Technician</span><span class="font-body-sm text-[11px] text-on-surface-variant truncate">Bayside EV Bay 4</span></div></div><a class="flex items-center justify-center px-space-md py-space-sm rounded-xl text-body-sm font-body-sm text-on-surface-variant hover:bg-error-container hover:text-on-error-container transition-all text-center" data-path="sign-out" href="#">Sign Out</a></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-body-sm font-body-sm text-on-surface-variant truncate"><span class="truncate text-on-surface-variant">Auto Sage Studio</span><span class="material-symbols-outlined text-[16px] shrink-0">chevron_right</span><span class="text-primary font-semibold truncate">Diagnostic Report &amp; Work Order</span></nav><div class="h-5 w-px bg-surface-variant hidden md:block shrink-0"></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low text-body-sm font-body-sm text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">directions_car</span><span class="font-medium truncate">2024 Porsche Taycan 4S</span><span class="text-[11px] px-1.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-mono">DOD-982</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="relative flex items-center hidden sm:flex"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px] pointer-events-none">search</span><input class="w-60 lg:w-72 h-9 pl-9 pr-space-md rounded-full bg-surface-container-low text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search DTC, CAN frame, WO#..." type="text"/></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-emerald-500"></span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Telemetry Live</span></div><button class="relative p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><button class="relative p-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">print</span></button></div></div></header><main class="w-full pt-16 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg space-y-space-lg">
+<!-- Dossier Header & Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md p-space-lg bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="space-y-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">verified</span> OEM Verified Deterministic Audit
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">terminal</span> ISO-14229 Compliant
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-mono">
+            HASH: SHA-256: 0x8F9B..E412
+          </span>
+</div>
+<div class="flex items-baseline gap-space-sm pt-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Diagnostic Report &amp; Work Order Dossier</h1>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 uppercase">WO-2024-8942-HV</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Session Ref: <strong class="text-on-surface font-semibold">#AS-8942-HV</strong></span>
+<span>•</span>
+<span>Created: <strong class="text-on-surface font-medium">Oct 24, 2024 — 14:32 UTC</strong></span>
+<span>•</span>
+<span>Status: <strong class="text-emerald-700 font-semibold inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> APPROVED FOR REPAIR / BENCH SIGN-OFF IN PROGRESS</strong></span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm transition-all" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Dossier</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span>Signed PDF</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-3.5 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-headline-sm text-headline-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+<span>Customer Portal</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-4 py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Authorize Work Order</span>
+</button>
+</div>
+</div>
+<!-- Main Workspace Split Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: 65% width (Col 8) -->
+<div class="lg:col-span-8 space-y-space-lg">
+<!-- Section A: Vehicle Intake Dossier -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">electric_car</span>
+</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Vehicle Telematics &amp; Intake Profile</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Validated live against Porsche Central Factory Telemetry Bus</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-low font-body-sm text-body-sm text-on-surface font-mono">Bay 02 • Hoist C</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md p-space-md bg-surface-container-low rounded-xl text-on-surface">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Vehicle Spec</span>
+<p class="font-headline-sm text-headline-sm font-semibold truncate">2024 Porsche Taycan 4S</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">J1-II EV Platform</p>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Architecture / Pack</span>
+<p class="font-headline-sm text-headline-sm font-semibold">800V High-Voltage</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">93.4 kWh Perf. Plus</p>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">VIN / License</span>
+<p class="font-headline-sm text-headline-sm font-semibold font-mono text-[13px] truncate">WP0AB2Y18PSA94821</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Plate: 8XYZ492 (CA)</p>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Odometer / Intake</span>
+<p class="font-headline-sm text-headline-sm font-semibold">14,820 mi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Oct 24 @ 09:15 AM</p>
+</div>
+</div>
+<!-- Customer Verbatim Box -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps uppercase">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">record_voice_over</span> Customer Intake Complaint (Verbatim)</span>
+<span>Intake Contact: Elena Rostova</span>
+</div>
+<p class="font-body-md text-body-md italic text-on-surface">
+              “Driver reports rapid battery temperature climb (&gt;54°C) during highway overtaking and high-ambient driving, accompanied by intermittent amber turtle icon and jerky regenerative braking deceleration.”
+            </p>
+<div class="flex items-center justify-between pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>Triage Intake Tech: <strong class="text-on-surface">Lead EV Tech M. Vance (#409)</strong></span>
+<span>Initial Diagnostic Dispatch: Thermal / High-Voltage Loop</span>
+</div>
+</div>
+</div>
+<!-- Section B: Deterministic Fault Isolation & Confirmed Diagnosis -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">troubleshoot</span>
+</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Deterministic Fault Isolation &amp; Bench Analysis</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rule Engine Inference ID: KB_RULE_EV_084 (Confidence: 99.8%)</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-caps text-label-caps uppercase tracking-wider font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span> High Severity / Derate Hazard
+            </span>
+</div>
+<!-- Confirmed Primary Diagnostic Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-sm">
+<div class="flex flex-wrap items-start justify-between gap-2">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Primary Confirmed Defect</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Secondary Coolant 3-Way Proportional Valve Actuator Jam</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Hardware Subsystem: High-Voltage Chiller &amp; Inverter Thermal Management Loop</p>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[12px] font-semibold text-on-surface">DTC: P0AF8</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[12px] font-semibold text-on-surface">DTC: P1A54</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-mono text-[12px] font-semibold text-on-surface">DTC: U0110</span>
+</div>
+</div>
+<!-- Technical Bench Verification Evidence -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest space-y-1">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-body-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">biotech</span>
+<span>Oscilloscope &amp; Multimeter Bench Findings</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+                Pinout check on Harness Connector <strong class="font-mono">X832 (Pins 1 &amp; 2)</strong> revealed an <strong class="text-error font-semibold">open coil resistance (∞ Infinite Ω)</strong> compared against factory nominal specification (<strong class="font-mono">18.5Ω – 22.0Ω</strong>). This isolates an internal solenoid actuator thermal fuse burnout, causing mechanical flap freeze locked in the radiator-bypass position. Continuous full-pack chilling under highway load is actively compromised.
+              </p>
+</div>
+<!-- Secondary Co-Factor -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-highest/60 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">info</span>
+<div>
+<strong class="font-medium text-on-surface">Secondary Co-Factor (Resolved):</strong> iBooster Transducer Signal Drift (<span class="font-mono text-[11px]">KB_RULE_BRK_019</span>) correlated with irregular pedal feel during regen braking. Successfully re-zeroed via software calibration routine; no mechanical component replacement required for braking assembly.
+              </div>
+</div>
+</div>
+</div>
+<!-- Section C: Itemized Repair Operations & Bill of Materials (BOM) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Itemized Repair Operations &amp; Parts BOM</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Direct OEM Component Procurement &amp; Standard Flat-Rate Labor Hours</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-900 font-label-caps text-label-caps uppercase">All Parts Reserved</span>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto rounded-xl bg-surface-container-low">
+<table class="w-full text-left font-body-md text-body-sm">
+<thead class="bg-surface-container-high/60 text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4">Line</th>
+<th class="py-3 px-4">Type</th>
+<th class="py-3 px-4">Description &amp; Part #</th>
+<th class="py-3 px-4 text-center">Qty / Hrs</th>
+<th class="py-3 px-4 text-right">Unit Rate</th>
+<th class="py-3 px-4 text-right">Ext. Total</th>
+<th class="py-3 px-4 text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest text-on-surface">
+<!-- Part 1 -->
+<tr>
+<td class="py-3 px-4 font-mono text-[11px] text-on-surface-variant">01</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-mono text-[11px]">PART</span></td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">Auxiliary Chiller 3-Way Valve Actuator</div>
+<div class="font-mono text-[11px] text-on-surface-variant">VAG OEM PN: 9J1.965.561.A</div>
+</td>
+<td class="py-3 px-4 text-center font-mono">1.0</td>
+<td class="py-3 px-4 text-right font-mono">$640.00</td>
+<td class="py-3 px-4 text-right font-mono font-semibold">$640.00</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 text-[11px] text-emerald-700 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Shelf B-14
+                    </span>
+</td>
+</tr>
+<!-- Part 2 -->
+<tr>
+<td class="py-3 px-4 font-mono text-[11px] text-on-surface-variant">02</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-mono text-[11px]">FLUID</span></td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">G40 Spec Demineralized EV Coolant Premix</div>
+<div class="font-mono text-[11px] text-on-surface-variant">5 Liter Jug (Ethylene Glycol OAT)</div>
+</td>
+<td class="py-3 px-4 text-center font-mono">2.0</td>
+<td class="py-3 px-4 text-right font-mono">$38.50</td>
+<td class="py-3 px-4 text-right font-mono font-semibold">$77.00</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center gap-1 text-[11px] text-emerald-700 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Dispenser 3
+                    </span>
+</td>
+</tr>
+<!-- Labor 1 -->
+<tr>
+<td class="py-3 px-4 font-mono text-[11px] text-on-surface-variant">03</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-mono text-[11px]">LABOR</span></td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">HV Safe De-energization &amp; MSD Lockout</div>
+<div class="font-mono text-[11px] text-on-surface-variant">Pursuant to SAE J2344 / NFPA 70E Safety Standard</div>
+</td>
+<td class="py-3 px-4 text-center font-mono">0.8 hrs</td>
+<td class="py-3 px-4 text-right font-mono">$195.00</td>
+<td class="py-3 px-4 text-right font-mono font-semibold">$156.00</td>
+<td class="py-3 px-4 text-center text-on-surface-variant font-mono text-[11px]">Trained EV4</td>
+</tr>
+<!-- Labor 2 -->
+<tr>
+<td class="py-3 px-4 font-mono text-[11px] text-on-surface-variant">04</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-mono text-[11px]">LABOR</span></td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">Front Wheel Liner Removal &amp; Valve R&amp;I</div>
+<div class="font-mono text-[11px] text-on-surface-variant">Left inner splash shield disassembly &amp; clamp torque</div>
+</td>
+<td class="py-3 px-4 text-center font-mono">1.6 hrs</td>
+<td class="py-3 px-4 text-right font-mono">$195.00</td>
+<td class="py-3 px-4 text-right font-mono font-semibold">$312.00</td>
+<td class="py-3 px-4 text-center text-on-surface-variant font-mono text-[11px]">Standard Op</td>
+</tr>
+<!-- Labor 3 -->
+<tr>
+<td class="py-3 px-4 font-mono text-[11px] text-on-surface-variant">05</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-mono text-[11px]">LABOR</span></td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">PIWIS Automated Vacuum Fill &amp; De-Gas Cycle</div>
+<div class="font-mono text-[11px] text-on-surface-variant">Full air-pocket purge with dual circuit vacuum pump</div>
+</td>
+<td class="py-3 px-4 text-center font-mono">1.0 hrs</td>
+<td class="py-3 px-4 text-right font-mono">$195.00</td>
+<td class="py-3 px-4 text-right font-mono font-semibold">$195.00</td>
+<td class="py-3 px-4 text-center text-on-surface-variant font-mono text-[11px]">Automated</td>
+</tr>
+<!-- Labor 4 -->
+<tr>
+<td class="py-3 px-4 font-mono text-[11px] text-on-surface-variant">06</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-mono text-[11px]">LABOR</span></td>
+<td class="py-3 px-4">
+<div class="font-semibold text-on-surface">Post-Repair 100% Chiller Telemetry Validation</div>
+<div class="font-mono text-[11px] text-on-surface-variant">Bench verification dynamically logging LIN bus actuation</div>
+</td>
+<td class="py-3 px-4 text-center font-mono">0.6 hrs</td>
+<td class="py-3 px-4 text-right font-mono">$195.00</td>
+<td class="py-3 px-4 text-right font-mono font-semibold">$117.00</td>
+<td class="py-3 px-4 text-center text-on-surface-variant font-mono text-[11px]">Diagnostic</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Financial Calculation Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Warranty &amp; Coverage Determination</span>
+<div class="flex items-center gap-2 text-emerald-800">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span class="font-headline-sm text-headline-sm font-semibold">Porsche OEM Warranty (Eligible)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Coverage Type: Porsche New Vehicle Limited Warranty &amp; HV Battery Thermal System Assurance. Claim Pre-Auth Hash: <span class="font-mono font-semibold text-on-surface">#WC-8942-PO</span>. Approved 100% factory billing.
+              </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-1.5 font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal (Parts &amp; Consumables):</span>
+<span class="font-mono text-on-surface font-medium">$717.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal (Labor 4.0 hrs @ $195):</span>
+<span class="font-mono text-on-surface font-medium">$780.00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Environmental &amp; Shop Consumables:</span>
+<span class="font-mono text-on-surface font-medium">$42.50</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Sales Tax (8.25% parts only):</span>
+<span class="font-mono text-on-surface font-medium">$62.66</span>
+</div>
+<div class="pt-2 flex justify-between items-baseline">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Gross Estimated Repair:</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface font-mono">$1,602.16</span>
+</div>
+<div class="p-2 rounded bg-emerald-100 text-emerald-950 flex justify-between items-center font-headline-sm text-headline-sm font-bold">
+<span>Customer Amount Due:</span>
+<span class="font-mono">$0.00 (Warranty)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section D: Workshop Safety & Compliance Gates -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-amber-100 text-amber-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">health_and_safety</span>
+</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Mandatory Workshop Safety &amp; Quality Compliance Gates</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">High-Voltage Protocol Checklists required prior to bay release</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Gate 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-amber-900 font-semibold uppercase">HV Gate #1 — Lockout Verification</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[12px]">check</span> PASS
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">SAE J2344 High-Voltage Lockout &amp; Grounding Routine</p>
+<div class="p-2 rounded bg-surface-container-lowest font-mono text-[11px] text-on-surface space-y-0.5">
+<div>• Manual Service Disconnect (MSD): Removed &amp; Locked Box #04</div>
+<div>• Zero-Potential Measured: <strong class="text-emerald-700">0.02V DC (&lt; 5.0V threshold)</strong></div>
+<div>• Category IV 1000V Fluke Meter Cal. Expiry: 11/2025</div>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Signed: M. Vance, Lead EV Master Tech (Cert #EV-9941)</p>
+</div>
+<!-- Gate 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary font-semibold uppercase">Gate #2 — Post-Repair Acceptance Criteria</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary bg-primary-fixed px-2 py-0.5 rounded-full">
+                  PRE-AUTHORIZED
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Telemetry Bench Dynamic Acceptance Thresholds</p>
+<div class="p-2 rounded bg-surface-container-lowest font-mono text-[11px] text-on-surface space-y-0.5">
+<div>• Required Chiller ΔT: &gt; 6.5°C under active 120s test run</div>
+<div>• Actuator Hall Sensor Deviation: &lt; 2.0% continuous error</div>
+<div>• CAN LIN Bus Frame 0x3E: 0 drops / 0 frame collisions</div>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant">Target bench cycle will auto-execute upon coolant filling</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: 35% width (Col 4) -->
+<div class="lg:col-span-4 space-y-space-lg">
+<!-- Authorization & Sign-Off Dossier Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center gap-space-sm pb-1">
+<span class="p-2 rounded-lg bg-emerald-100 text-emerald-900 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Legal Sign-Off &amp; Approvals</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Multi-Party Verification Audit</p>
+</div>
+</div>
+<!-- Customer Remote Signature -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Customer Authorization</span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 font-label-caps text-label-caps uppercase">Digitally Signed</span>
+</div>
+<p class="font-headline-sm text-body-md font-semibold text-on-surface">Elena Rostova</p>
+<div class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant font-mono">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+<span>Signed via SMS Portal OTP • Oct 24, 15:10 UTC</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest text-[11px] font-mono text-on-surface-variant truncate">
+              Token: 9d82e18fa4b31a02931bc10294dae
+            </div>
+</div>
+<!-- Technician Digital Signature Pad Preview -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Lead Technician Bench Sign-off</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-caps text-label-caps uppercase">Bench Validated</span>
+</div>
+<p class="font-headline-sm text-body-md font-semibold text-on-surface">Marcus Vance, Lead EV Tech (#409)</p>
+<!-- Vector Stylized Signature Canvas Representation -->
+<div class="h-20 bg-surface-container-lowest rounded-lg p-2 flex flex-col justify-between relative overflow-hidden">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Bench Tablet Signature Capture</span>
+<svg class="w-full h-12 text-primary" fill="none" stroke="currentColor" viewbox="0 0 300 60">
+<path d="M 10 35 Q 35 10 50 30 T 90 25 T 130 40 T 170 15 T 210 35 T 260 20 T 290 30" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<path d="M 60 45 Q 120 48 200 42" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+<div class="flex justify-between items-center text-[10px] font-mono text-on-surface-variant">
+<span>Timestamp: 2024-10-24 15:18:44</span>
+<span>HW Device: AS-PAD-04</span>
+</div>
+</div>
+</div>
+<!-- Supervisor Seal / Stamp -->
+<div class="p-space-md rounded-xl bg-emerald-50 text-emerald-950 flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-emerald-600 text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">verified</span>
+</div>
+<div class="min-w-0 flex-1">
+<span class="font-label-caps text-label-caps text-emerald-800 uppercase tracking-widest block font-bold">Official Bay Release Stamp</span>
+<p class="font-headline-sm text-body-md font-bold truncate">APPROVED FOR REPAIR</p>
+<p class="font-body-sm text-[11px] text-emerald-800 font-mono">AUTO SAGE CERTIFIED BAY 02</p>
+</div>
+</div>
+</div>
+<!-- Telemetry Pre vs Post Repair Target Matrix -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">query_stats</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Target Telemetry Matrix</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pre-Diagnostic vs Acceptance Bench Spec</p>
+</div>
+</div>
+<div class="space-y-space-sm">
+<!-- Metric 1 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between text-body-sm font-medium">
+<span class="text-on-surface">Coolant Loop Chiller ΔT</span>
+<span class="font-mono text-emerald-700 font-semibold">Target &gt; 6.5°C</span>
+</div>
+<div class="grid grid-cols-2 gap-2 font-mono text-center">
+<div class="p-1.5 rounded bg-error-container text-on-error-container text-[12px]">
+                  Current: <strong class="font-bold">1.4°C</strong> (FAULT)
+                </div>
+<div class="p-1.5 rounded bg-surface-container-highest text-on-surface text-[12px]">
+                  Post: <strong class="text-primary font-bold">&gt; 6.5°C</strong> (REPAIRED)
+                </div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between text-body-sm font-medium">
+<span class="text-on-surface">Actuator Feedback Hall Drift</span>
+<span class="font-mono text-emerald-700 font-semibold">Target &lt; 2.0%</span>
+</div>
+<div class="grid grid-cols-2 gap-2 font-mono text-center">
+<div class="p-1.5 rounded bg-error-container text-on-error-container text-[12px]">
+                  Current: <strong class="font-bold">88.0%</strong> (STALLED)
+                </div>
+<div class="p-1.5 rounded bg-surface-container-highest text-on-surface text-[12px]">
+                  Post: <strong class="text-primary font-bold">&lt; 1.5%</strong> (SYNCED)
+                </div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between text-body-sm font-medium">
+<span class="text-on-surface">Max Cell Temp Under Highway Load</span>
+<span class="font-mono text-emerald-700 font-semibold">Target &lt; 38.5°C</span>
+</div>
+<div class="grid grid-cols-2 gap-2 font-mono text-center">
+<div class="p-1.5 rounded bg-error-container text-on-error-container text-[12px]">
+                  Current: <strong class="font-bold">54.2°C</strong> (HOT)
+                </div>
+<div class="p-1.5 rounded bg-surface-container-highest text-on-surface text-[12px]">
+                  Post: <strong class="text-primary font-bold">&lt; 38.5°C</strong> (NOMINAL)
+                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Attached Technical Evidence Dossier Files -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-surface-container text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Diagnostic Attachments</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cryptographically Signed Evidence</p>
+</div>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">4 Files</span>
+</div>
+<div class="space-y-space-xs">
+<!-- File 1 -->
+<a class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all group" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">table_chart</span>
+<div class="truncate">
+<p class="font-body-sm text-body-sm font-medium text-on-surface truncate group-hover:text-primary transition-colors">CAN_Bus_Log_0x3F2_FreezeFrame.csv</p>
+<p class="font-mono text-[11px] text-on-surface-variant">1.4 MB • Raw LIN/CAN Dump</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary shrink-0">download</span>
+</a>
+<!-- File 2 -->
+<a class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all group" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">monitoring</span>
+<div class="truncate">
+<p class="font-body-sm text-body-sm font-medium text-on-surface truncate group-hover:text-primary transition-colors">Resistance_Oscillogram_X832.png</p>
+<p class="font-mono text-[11px] text-on-surface-variant">840 KB • Scope Capture Trace</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary shrink-0">download</span>
+</a>
+<!-- File 3 -->
+<a class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all group" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0">picture_as_pdf</span>
+<div class="truncate">
+<p class="font-body-sm text-body-sm font-medium text-on-surface truncate group-hover:text-primary transition-colors">PIWIS_Diagnostic_PreScan_Oct24.pdf</p>
+<p class="font-mono text-[11px] text-on-surface-variant">2.1 MB • Factory Tester Log</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary shrink-0">download</span>
+</a>
+<!-- File 4 -->
+<a class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all group" href="#">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0">picture_as_pdf</span>
+<div class="truncate">
+<p class="font-body-sm text-body-sm font-medium text-on-surface truncate group-hover:text-primary transition-colors">HV_Lockout_Checklist_Signed.pdf</p>
+<p class="font-mono text-[11px] text-on-surface-variant">420 KB • Safety Protocol Seal</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-primary shrink-0">download</span>
+</a>
+</div>
+</div>
+<!-- Official Disclaimer & Regulatory Compliance -->
+<div class="p-space-md rounded-xl bg-surface-container-low text-on-surface-variant space-y-2">
+<div class="flex items-center gap-1.5 font-label-caps text-label-caps uppercase text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">policy</span>
+<span>Legal Notice &amp; Regulatory Standard</span>
+</div>
+<p class="font-body-sm text-[11px] leading-relaxed">
+            This official diagnostic work order and engineering dossier is generated deterministically by Auto Sage Diagnostic Studio pursuant to OEM workshop manual procedures (Porsche PIWIS-III / ISO-14229). All high-voltage procedures executed by certified high-voltage technicians. Warranty claim adjudication subjected to final OEM factory inspection.
+          </p>
+<div class="pt-1 flex items-center justify-between font-mono text-[10px] text-on-surface-variant">
+<span>ISO-26262 ASIL-C Integrity</span>
+<span>Cert Hash: AS-9842-8812</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>
