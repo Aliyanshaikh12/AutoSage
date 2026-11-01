@@ -1,8 +1,58 @@
+# Dependencies
 node_modules/
-dist/
-__pycache__/
-*.pyc
+*/node_modules/
+
+# Python Virtual Environments
 .venv/
+.venv-*/
 venv/
+env/
+ENV/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build Outputs
+dist/
+build/
+*.egg-info/
+
+# Temporary / Scratch Files
+scratch/
+.chrome_temp/
+*.tmp
+*.temp
+~$*
+*~
+
+# Environment and Credentials
 .env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Operating System Files
 .DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE & Editor Configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
